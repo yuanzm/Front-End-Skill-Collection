@@ -1,22 +1,12 @@
 function countWord(str) {
-	var start = 0;
-	var compareStr = ' ';
-	var count = 0;
-	var allWord = [];
+	var	allWord = [],
+		compareWord,
+		countData = {};
 
-	str += ' ';
-	for(var i = 0;i < str.length;i++) {
-		var index = str.indexOf(compareStr, start);
-		if (index == -1) {
-			break;
-		} else {
-			allWord[count++] = str.substring(start, index);
-			start = index + 1;
-		}
-	}
-	var compareWord = allWord[0]
-	var countData = {};
+	allWord = str.split(' ');
+
 	for(var i = 0;i < allWord.length;i++) {
+		compareWord = allWord[i];
 		if (countData[allWord[i]] >= 1) {
 			continue;
 		} else {
@@ -28,6 +18,7 @@ function countWord(str) {
 			}
 		}
 	}
+	console.log(countData);
 	var higest = {};
 	var number = 0;
 	for(word in countData) {
