@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="need.js"></script>
+<script type="text/javascript">
+need.require(["test"], function() {
+	var ShapeFactory = need.use("ShapeFactory");
+	alert(ShapeFactory.getShape("CIRCLE", 5).area());
+	alert(ShapeFactory.getShape("RECTANGLE", 3, 4).area());
+});
+</script>
+</html>
